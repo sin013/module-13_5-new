@@ -5,7 +5,7 @@ from aiogram.dispatcher import FSMContext
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 import asyncio
 
-api = ""
+api = "7354477285:AAFWpFyg81PFOkQHgisVwPUVtYCoDXd-rKs"
 bot = Bot(token=api)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
@@ -81,6 +81,11 @@ async def send_calories(message, state):
                              f'                                      {c_w}, если вы женщина')
 
     await state.finish()
+
+
+@dp.message_handler()
+async def all_message(message):
+    await message.answer("Введите команду /start, чтобы начать общение")
 
 
 if __name__ == '__main__':
